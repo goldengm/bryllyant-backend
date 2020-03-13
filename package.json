@@ -1,31 +1,18 @@
 {
-  "name": "oh-my-fullstack",
+  "name": "bryllyant-backend",
   "version": "1.0.0",
-  "description": "Full stack web application skeleton",
-  "keywords": [
-    "skeleton",
-    "starter kit",
-    "boilerplate",
-    "fullstack",
-    "isomorphic",
-    "react",
-    "next",
-    "redux",
-    "rxjs",
-    "ssr"
-  ],
-  "repository": "oh-my-c0de/oh-my-fullstack.git",
-  "author": "DK <kvokovdl@gmail.com>",
-  "license": "Beerware",
+  "description": "Backend server for bryllyant test task",
+  "author": "Hua Cheng Wan <br-invin89@hotmail.com>",
+  "license": "Payen Ent",
   "scripts": {
     "start": "NODE_ENV=development nodemon -w server server -x babel-node",
     "build": "yarn build:server && yarn build:client",
     "build:server": "NODE_ENV=production rimraf .server-dist && babel server -d .server-dist --copy-files",
     "build:client": "NODE_ENV=production next build",
     "preprod:start": "yarn build:server && yarn build:client",
-    "prod:start": "NODE_ENV=production pm2 start .server-dist --name \"oh-my-fullstack\" -i max",
-    "prod:stop": "pm2 delete oh-my-fullstack",
-    "prod:restart": "pm2 restart oh-my-fullstack",
+    "prod:start": "NODE_ENV=production pm2 start .server-dist --name \"bryllyant-backend\" -i max",
+    "prod:stop": "pm2 delete bryllyant-backend",
+    "prod:restart": "pm2 restart bryllyant-backend",
     "lint": "eslint . --ext .js"
   },
   "dependencies": {
@@ -39,6 +26,7 @@
     "helmet": "^3.15.0",
     "immutable": "^4.0.0-rc.12",
     "next": "^7.0.2",
+    "pg": "^7.18.2",
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
@@ -47,7 +35,10 @@
     "redux-actions": "^2.6.4",
     "redux-immutable": "^4.0.0",
     "redux-observable": "^1.0.0",
+    "redux-persist": "^5.10.0",
+    "redux-persist-transform-immutable": "^5.0.0",
     "rxjs": "^6.3.3",
+    "sequelize": "^5.21.5",
     "winston": "^3.1.0"
   },
   "devDependencies": {

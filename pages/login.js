@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
-import { DefaultLayout } from '../components/layout';
+import { LoginLayout } from '../components/layout';
+import LoginForm from '../components/login-form';
 
 const styles = {
   wrapper: {
@@ -10,16 +11,16 @@ const styles = {
 };
 
 // eslint-disable-next-line react/prefer-stateless-function
-class About extends PureComponent {
+class Login extends PureComponent {
   render() {
     return (
-      <DefaultLayout>
+      <LoginLayout>
         <div style={styles.wrapper}>
-          <h1>About</h1>
+          <LoginForm />
         </div>
-      </DefaultLayout>
+      </LoginLayout>
     );
   }
 }
 
-export default About;
+export default Login;

@@ -1,8 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { DefaultLayout } from '../components/layout';
-import Counter from '../components/counter';
-import ApiStatus from '../components/api-status';
+import CheckAuthed from '../components/check-authed';
 
 const styles = {
   wrapper: {
@@ -14,23 +13,14 @@ const styles = {
 
 class Home extends PureComponent {
   static propTypes = {
-    userAgent: PropTypes.string.isRequired,
   };
 
-  static async getInitialProps({ req }) {
-    const userAgent = req ? req.headers['user-agent'] : window.navigator.userAgent; // eslint-disable-line no-undef
-    return { userAgent };
-  }
-
   render() {
-    const { userAgent } = this.props;
     return (
-      <DefaultLayout>
+      <DefaultLayout>        
         <div style={styles.wrapper}>
-          <h1>Hello World!</h1>
-          <p>{userAgent}</p>
-          <Counter />
-          <ApiStatus />
+          <CheckAuthed />
+          <h1>Welcome to Admin Page of Bryllyant Site.</h1>
         </div>
       </DefaultLayout>
     );

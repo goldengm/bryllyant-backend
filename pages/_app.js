@@ -6,6 +6,7 @@ import Router from 'next/router';
 import { Provider } from 'react-redux';
 import { withStore } from '../redux';
 import { ga } from '../helpers';
+import { PersistGate } from 'redux-persist/integration/react';
 
 if (process.browser) {
   Router.events.on('routeChangeComplete', url => ga.pageview(url));
@@ -32,13 +33,27 @@ class MyApp extends App {
     return (
       <Container>
         <Head>
-          <title>Oh My Full Stack</title>
+          <title>Backend Server for Bryllyant</title>
         </Head>
         <Provider store={reduxStore}>
           <Component {...pageProps} />
         </Provider>
       </Container>
     );
+    /*
+    return (
+      <Container>
+        <Head>
+          <title>Backend Server for Bryllyant</title>
+        </Head>
+        <Provider store={reduxStore}>
+          <PersistGate loading={null} persistor={reduxStore.__PERSISTOR}>
+            <Component {...pageProps} />
+          </PersistGate>
+        </Provider>
+      </Container>
+    );
+    */
   }
 }
 
